@@ -17,9 +17,9 @@ export const mockUsers: User[] = [
 ]
 
 export const mockStations: Station[] = [
-  { id: 's1', name: 'FuelFlow Lagos Central', location: 'Victoria Island, Lagos', address: '15 Adeola Odeku Street', city: 'Lagos', manager: 'Chidi Okafor', managerId: 'u2', isActive: true },
-  { id: 's2', name: 'FuelFlow Abuja North', location: 'Wuse 2, Abuja', address: '22 Aminu Kano Crescent', city: 'Abuja', manager: 'Fatima Yusuf', managerId: 'u2', isActive: true },
-  { id: 's3', name: 'FuelFlow Port Harcourt', location: 'GRA, Port Harcourt', address: '8 Trans Amadi Road', city: 'Port Harcourt', manager: 'Emeka Nwosu', managerId: 'u2', isActive: false },
+  { id: 's1', name: 'FuelFlow Nairobi Central', location: 'Westlands, Nairobi', address: '15 Waiyaki Way', city: 'Nairobi', manager: 'Chidi Okafor', managerId: 'u2', isActive: true },
+  { id: 's2', name: 'FuelFlow Mombasa Road', location: 'Industrial Area, Nairobi', address: '22 Mombasa Road', city: 'Nairobi', manager: 'Fatima Yusuf', managerId: 'u2', isActive: true },
+  { id: 's3', name: 'FuelFlow Kisumu', location: 'Milimani, Kisumu', address: '8 Oginga Odinga Street', city: 'Kisumu', manager: 'Emeka Nwosu', managerId: 'u2', isActive: false },
 ]
 
 export const mockFuelProducts: FuelProduct[] = [

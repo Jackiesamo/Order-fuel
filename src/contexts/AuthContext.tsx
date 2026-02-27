@@ -20,7 +20,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setUser(foundUser)
       return true
     }
-    return false
+    // Default to customer role if email not found
+    setUser({
+      id: 'temp',
+      email: email,
+      name: email.split('@')[0],
+      role: 'customer'
+    })
+    return true
   }
 
   const logout = () => {
