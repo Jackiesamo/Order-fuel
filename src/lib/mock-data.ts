@@ -1,0 +1,112 @@
+import { Order, FuelProduct, Station, User } from './types'
+
+export const DEMO_CREDENTIALS = {
+  admin: { email: 'admin@fuelflow.com', role: 'Admin' },
+  manager: { email: 'manager@fuelflow.com', role: 'Manager' },
+  attendant: { email: 'attendant@fuelflow.com', role: 'Attendant' },
+  rider: { email: 'rider@fuelflow.com', role: 'Rider' },
+  customer: { email: 'customer@fuelflow.com', role: 'Customer' },
+}
+
+export const mockUsers: User[] = [
+  { id: 'u1', email: 'admin@fuelflow.com', name: 'Admin User', role: 'admin', phone: '+234 801 234 5678' },
+  { id: 'u2', email: 'manager@fuelflow.com', name: 'Chidi Okafor', role: 'station_manager', phone: '+234 802 345 6789' },
+  { id: 'u3', email: 'attendant@fuelflow.com', name: 'Ngozi Eze', role: 'attendant', phone: '+234 803 456 7890' },
+  { id: 'u4', email: 'rider@fuelflow.com', name: 'Tunde Bello', role: 'rider', phone: '+234 804 567 8901' },
+  { id: 'u5', email: 'customer@fuelflow.com', name: 'Amina Ibrahim', role: 'customer', phone: '+234 805 678 9012' },
+]
+
+export const mockStations: Station[] = [
+  { id: 's1', name: 'FuelFlow Lagos Central', location: 'Victoria Island, Lagos', address: '15 Adeola Odeku Street', city: 'Lagos', manager: 'Chidi Okafor', managerId: 'u2', isActive: true },
+  { id: 's2', name: 'FuelFlow Abuja North', location: 'Wuse 2, Abuja', address: '22 Aminu Kano Crescent', city: 'Abuja', manager: 'Fatima Yusuf', managerId: 'u2', isActive: true },
+  { id: 's3', name: 'FuelFlow Port Harcourt', location: 'GRA, Port Harcourt', address: '8 Trans Amadi Road', city: 'Port Harcourt', manager: 'Emeka Nwosu', managerId: 'u2', isActive: false },
+]
+
+export const mockFuelProducts: FuelProduct[] = [
+  { id: 'f1', type: 'Petrol (PMS)', pricePerLitre: 617, stockLitres: 50000, stationId: 's1', available: true },
+  { id: 'f2', type: 'Diesel (AGO)', pricePerLitre: 1200, stockLitres: 30000, stationId: 's1', available: true },
+  { id: 'f3', type: 'Kerosene (DPK)', pricePerLitre: 950, stockLitres: 15000, stationId: 's1', available: true },
+  { id: 'f4', type: 'Petrol (PMS)', pricePerLitre: 620, stockLitres: 40000, stationId: 's2', available: true },
+  { id: 'f5', type: 'Diesel (AGO)', pricePerLitre: 1210, stockLitres: 25000, stationId: 's2', available: true },
+]
+
+export const mockOrders: Order[] = [
+  {
+    id: 'ord001',
+    customerId: 'u5',
+    customerName: 'Amina Ibrahim',
+    fuelType: 'Petrol (PMS)',
+    quantity: 50,
+    totalPrice: 30850,
+    totalCost: 30850,
+    deliveryAddress: '15 Admiralty Way, Lekki Phase 1, Lagos',
+    status: 'delivered',
+    createdAt: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000).toISOString(),
+    riderId: 'u4',
+    riderName: 'Tunde Bello',
+    attendantId: 'u3',
+    stationId: 's1',
+    stationName: 'FuelFlow Lagos Central',
+  },
+  {
+    id: 'ord002',
+    customerId: 'u5',
+    customerName: 'Amina Ibrahim',
+    fuelType: 'Diesel (AGO)',
+    quantity: 100,
+    totalPrice: 120000,
+    totalCost: 120000,
+    deliveryAddress: '15 Admiralty Way, Lekki Phase 1, Lagos',
+    status: 'on_the_way',
+    createdAt: new Date(Date.now() - 1 * 60 * 60 * 1000).toISOString(),
+    riderId: 'u4',
+    riderName: 'Tunde Bello',
+    attendantId: 'u3',
+    stationId: 's1',
+    stationName: 'FuelFlow Lagos Central',
+  },
+  {
+    id: 'ord003',
+    customerId: 'u5',
+    customerName: 'Kunle Adeyemi',
+    fuelType: 'Petrol (PMS)',
+    quantity: 75,
+    totalPrice: 46275,
+    totalCost: 46275,
+    deliveryAddress: '22 Bourdillon Road, Ikoyi, Lagos',
+    status: 'preparing',
+    createdAt: new Date(Date.now() - 30 * 60 * 1000).toISOString(),
+    attendantId: 'u3',
+    stationId: 's1',
+    stationName: 'FuelFlow Lagos Central',
+  },
+  {
+    id: 'ord004',
+    customerId: 'u5',
+    customerName: 'Blessing Okoro',
+    fuelType: 'Diesel (AGO)',
+    quantity: 200,
+    totalPrice: 240000,
+    totalCost: 240000,
+    deliveryAddress: '8 Adeola Odeku Street, Victoria Island, Lagos',
+    status: 'pending',
+    createdAt: new Date(Date.now() - 10 * 60 * 1000).toISOString(),
+    stationId: 's1',
+    stationName: 'FuelFlow Lagos Central',
+  },
+  {
+    id: 'ord005',
+    customerId: 'u5',
+    customerName: 'Ibrahim Musa',
+    fuelType: 'Kerosene (DPK)',
+    quantity: 30,
+    totalPrice: 28500,
+    totalCost: 28500,
+    deliveryAddress: '45 Ozumba Mbadiwe Avenue, Victoria Island, Lagos',
+    status: 'ready_for_pickup',
+    createdAt: new Date(Date.now() - 45 * 60 * 1000).toISOString(),
+    attendantId: 'u3',
+    stationId: 's1',
+    stationName: 'FuelFlow Lagos Central',
+  },
+]
