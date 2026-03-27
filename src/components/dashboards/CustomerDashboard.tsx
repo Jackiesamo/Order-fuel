@@ -2,22 +2,39 @@ import { ShoppingCart, Package, TrendingUp } from 'lucide-react';
 import { mockOrders, mockFuelProducts, mockStations } from '@/lib/mock-data';
 import { ORDER_STATUS_LABELS, ORDER_STATUS_COLORS } from '@/lib/types';
 import StatCard from '@/components/StatCard';
+import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 
 const CustomerDashboard = () => {
+  const navigate = useNavigate();
   const myOrders = mockOrders.filter(o => o.customerId === 'u5');
   const totalSpent = myOrders.filter(o => o.status === 'delivered').reduce((s, o) => s + o.totalCost, 0);
 
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-display font-bold text-foreground">Welcome back, Amina 👋</h1>
+        <h1 className="text-2xl font-display font-bold text-foreground">Welcome back 👋</h1>
         <p className="text-muted-foreground">Order fuel and track your deliveries</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <StatCard icon={<ShoppingCart />} label="My Orders" value={myOrders.length} />
         <StatCard icon={<Package />} label="Active" value={myOrders.filter(o => o.status !== 'delivered').length} />
-        <StatCard icon={<TrendingUp />} label="Total Spent" value={`₦${totalSpent.toLocaleString()}`} />
+        <StatCard icon={<TrendingUp />} label="Total Spent" value={`KSh ${totalSpent.toLocaleString()}`} />
+      </div>
+
+      {/* Order Fuel Button */}
+      <div className="rounded-xl border border-border bg-card p-6 shadow-card text-center">
+        <h2 className="text-xl font-display font-bold text-foreground mb-2">Need Fuel?</h2>
+        <p className="text-muted-foreground mb-4">Order fuel and get it delivered to your doorstep</p>
+        <Button 
+          onClick={() => navigate('/dashboard/order')} 
+          className="bg-gradient-fuel text-primary-foreground font-semibold"
+          size="lg"
+        >
+          <ShoppingCart className="w-4 h-4 mr-2" />
+          Order Fuel Now
+        </Button>
       </div>
 
       {/* Fuel prices */}
@@ -27,7 +44,7 @@ const CustomerDashboard = () => {
           {mockFuelProducts.filter(f => f.stationId === 's1').map((fuel) => (
             <div key={fuel.id} className="rounded-xl border border-border bg-card p-5 shadow-card hover:glow-border transition-all">
               <p className="text-lg font-display font-bold text-foreground">{fuel.type}</p>
-              <p className="text-2xl font-bold text-primary mt-1">₦{fuel.pricePerLitre}<span className="text-sm text-muted-foreground font-normal">/litre</span></p>
+              <p className="text-2xl font-bold text-primary mt-1">KSh {fuel.pricePerLitre}<span className="text-sm text-muted-foreground font-normal">/litre</span></p>
               <p className="text-xs text-muted-foreground mt-2">{fuel.stockLitres.toLocaleString()}L in stock</p>
             </div>
           ))}
@@ -51,7 +68,7 @@ const CustomerDashboard = () => {
                   <p className="text-foreground font-medium">{order.fuelType} — {order.quantity}L</p>
                   <p className="text-sm text-muted-foreground">{order.stationName}</p>
                 </div>
-                <p className="font-display font-bold text-foreground">₦{order.totalCost.toLocaleString()}</p>
+                <p className="font-display font-bold text-foreground">KSh {order.totalCost.toLocaleString()}</p>
               </div>
             </div>
           ))}

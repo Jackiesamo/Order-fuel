@@ -58,7 +58,7 @@ const OrderFuel = () => {
             <SelectContent>
               {availableFuels.map(f => (
                 <SelectItem key={f.id} value={f.type}>
-                  {f.type} — ₦{f.pricePerLitre}/L
+                  {f.type} — KSh {f.pricePerLitre}/L
                 </SelectItem>
               ))}
             </SelectContent>
@@ -91,7 +91,7 @@ const OrderFuel = () => {
         {/* Total */}
         <div className="rounded-lg bg-muted p-4 flex items-center justify-between">
           <span className="text-muted-foreground font-medium">Estimated Total</span>
-          <span className="text-2xl font-display font-bold text-primary">₦{totalCost.toLocaleString()}</span>
+          <span className="text-2xl font-display font-bold text-primary">KSh {totalCost.toLocaleString()}</span>
         </div>
 
         <Button type="submit" className="w-full bg-gradient-fuel text-primary-foreground font-semibold">

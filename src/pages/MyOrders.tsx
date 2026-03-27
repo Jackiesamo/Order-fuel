@@ -29,7 +29,7 @@ const MyOrders = () => {
                 <div><span className="text-muted-foreground">Fuel:</span> <span className="text-foreground">{order.fuelType}</span></div>
                 <div><span className="text-muted-foreground">Qty:</span> <span className="text-foreground">{order.quantity}L</span></div>
                 <div><span className="text-muted-foreground">Station:</span> <span className="text-foreground">{order.stationName}</span></div>
-                <div><span className="text-muted-foreground">Total:</span> <span className="text-foreground font-bold">₦{order.totalCost.toLocaleString()}</span></div>
+                <div><span className="text-muted-foreground">Total:</span> <span className="text-foreground font-bold">KSh {order.totalCost.toLocaleString()}</span></div>
               </div>
               {order.riderName && (
                 <p className="text-sm text-muted-foreground mt-2">Rider: {order.riderName}</p>

@@ -32,7 +32,7 @@ const Deliveries = () => {
                 <MapPin className="w-3 h-3" />
                 {order.deliveryAddress}
               </div>
-              <p className="text-sm font-bold text-foreground mt-2">₦{order.totalCost.toLocaleString()}</p>
+              <p className="text-sm font-bold text-foreground mt-2">KSh {order.totalCost.toLocaleString()}</p>
             </div>
           ))}
         </div>

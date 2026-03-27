@@ -25,7 +25,7 @@ const FuelProducts = () => {
                 <tr key={fuel.id} className="border-b border-border last:border-0 hover:bg-muted/30 transition-colors">
                   <td className="px-4 py-3 font-medium text-foreground">{fuel.type}</td>
                   <td className="px-4 py-3 text-muted-foreground">{station?.name}</td>
-                  <td className="px-4 py-3 text-primary font-bold">₦{fuel.pricePerLitre.toLocaleString()}</td>
+                  <td className="px-4 py-3 text-primary font-bold">KSh {fuel.pricePerLitre.toLocaleString()}</td>
                   <td className="px-4 py-3 text-secondary-foreground">{fuel.stockLitres.toLocaleString()}</td>
                 </tr>
               );

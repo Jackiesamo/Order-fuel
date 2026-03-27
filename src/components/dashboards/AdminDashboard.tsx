@@ -19,7 +19,7 @@ const AdminDashboard = () => {
         <StatCard icon={<Building2 />} label="Active Stations" value={activeStations} />
         <StatCard icon={<Users />} label="Total Users" value={mockUsers.length} />
         <StatCard icon={<ShoppingCart />} label="Total Orders" value={mockOrders.length} />
-        <StatCard icon={<TrendingUp />} label="Revenue" value={`₦${totalRevenue.toLocaleString()}`} />
+        <StatCard icon={<TrendingUp />} label="Revenue" value={`KSh ${totalRevenue.toLocaleString()}`} />
       </div>
 
       <div>

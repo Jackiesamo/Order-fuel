@@ -16,7 +16,7 @@ const ManagerDashboard = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <StatCard icon={<ClipboardList />} label="Station Orders" value={stationOrders.length} />
-        <StatCard icon={<TrendingUp />} label="Revenue" value={`₦${revenue.toLocaleString()}`} />
+        <StatCard icon={<TrendingUp />} label="Revenue" value={`KSh ${revenue.toLocaleString()}`} />
         <StatCard icon={<Package />} label="Pending" value={stationOrders.filter(o => o.status === 'pending').length} />
       </div>
 

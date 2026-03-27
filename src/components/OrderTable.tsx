@@ -21,7 +21,7 @@ const OrderTable = ({ orders }: { orders: Order[] }) => (
               <td className="px-4 py-3 text-foreground">{order.customerName}</td>
               <td className="px-4 py-3 text-secondary-foreground">{order.fuelType}</td>
               <td className="px-4 py-3 text-secondary-foreground">{order.quantity}</td>
-              <td className="px-4 py-3 font-medium text-foreground">₦{order.totalCost.toLocaleString()}</td>
+              <td className="px-4 py-3 font-medium text-foreground">KSh {order.totalCost.toLocaleString()}</td>
               <td className="px-4 py-3">
                 <span className={`inline-block px-2.5 py-1 rounded-full text-xs font-medium ${ORDER_STATUS_COLORS[order.status]}`}>
                   {ORDER_STATUS_LABELS[order.status]}

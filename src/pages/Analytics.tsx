@@ -16,9 +16,9 @@ const Analytics = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <StatCard icon={<TrendingUp />} label="Total Revenue" value={`₦${totalRevenue.toLocaleString()}`} />
+        <StatCard icon={<TrendingUp />} label="Total Revenue" value={`KSh ${totalRevenue.toLocaleString()}`} />
         <StatCard icon={<ShoppingCart />} label="Completed Orders" value={delivered.length} />
-        <StatCard icon={<BarChart3 />} label="Avg Order Value" value={`₦${avgOrderValue.toLocaleString()}`} />
+        <StatCard icon={<BarChart3 />} label="Avg Order Value" value={`KSh ${avgOrderValue.toLocaleString()}`} />
         <StatCard icon={<Fuel />} label="Total Litres Ordered" value={`${totalLitres}L`} />
       </div>
 
